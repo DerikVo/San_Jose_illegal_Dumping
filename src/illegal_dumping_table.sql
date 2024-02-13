@@ -6,8 +6,8 @@ The api pull does light cleaning such as coverting data from unix to utc pst dat
 */
 
 CREATE TABLE illegal_dumping (
-    datetimereceivedutc timestamp
-    ,datetimecompletedutc timestamp
+    datetimereceivedutc timestamptz
+    ,datetimecompletedutc timestamptz
     ,workorderrefno varchar
     ,objectid bigint
     ,facilityid bigint
@@ -15,26 +15,18 @@ CREATE TABLE illegal_dumping (
     ,councildistrict int CHECK (councildistrict >= 0 AND councildistrict <= 10)
     ,servicerecordid bigint
     ,servicecategory varchar
-    ,datetimereceived timestamp
+    ,datetimereceived timestamptz
     ,status varchar(10) CHECK (status IN ('Closed', 'Assigned', 'Open'))
-    ,datetimecompleted timestamp
+    ,datetimecompleted timestamptz
     ,detailsummary varchar
     ,latitude numeric
     ,longitude numeric
     ,imagename varchar
     ,hyperlink varchar
     ,mysanjoserefno varchar
-    ,lastupdatethirtydays timestamp
-    ,lastupdate timestamp
+    ,lastupdatethirtydays timestamptz
+    ,lastupdate timestamptz
     ,notes varchar
     ,enterpriseid varchar
     ,globalid varchar
 );
-
-
-
-
-select 
-	*
-from illegal_dumping
-limit 10;
