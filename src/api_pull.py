@@ -32,6 +32,8 @@ if not os.path.exists(file_path):
     # Reset the index of the final result_df
     df.reset_index(drop=True, inplace=True)
     #saves csv
+    if not os.path.exists('../data'):
+        os.makedirs('../data')
     df.to_csv('../data/illegal_dumping.csv', index= False)
     #print a status code for creating a csv if it didnt exist before
     print('illegal dumping csv created')
