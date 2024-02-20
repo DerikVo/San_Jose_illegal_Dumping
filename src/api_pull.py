@@ -11,6 +11,9 @@ This has gone through serval interations due to issues with importing data into 
 Code was later updated to have a seperate script for pulling the data an cleaning the data
 """
 
+import os
+import pandas as pd
+import requests
 
 file_path = '../data/illegal_dumping.csv'
 if not os.path.exists(file_path):

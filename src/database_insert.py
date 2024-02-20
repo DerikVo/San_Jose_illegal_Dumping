@@ -4,7 +4,8 @@ Last updated: 20240219
 This script is a work around for inserting data into the database with individual insert statements. Currently have isues with using the import function and date's being out of range. Even when converting them to seconds or using date strings via api protocol. 
 
 """
-
+import pandas as pd
+import numpy as np
 
 def generate_insert_sql(df, table_name, output_file):
     df.replace(np.nan, 0, inplace=True) #temporary fix to get pipeline to work; will need to fix later
