@@ -1,3 +1,7 @@
+import os
+import pandas as pd
+import requests
+
 """
 20240219
 Code was asited by chatGPT; prompt focused on converted unix time into pst. Line 13 was fixed to convert to milliseconds and 21 was generated  to convert to PST
@@ -11,9 +15,7 @@ This has gone through serval interations due to issues with importing data into 
 Code was later updated to have a seperate script for pulling the data an cleaning the data
 """
 
-import os
-import pandas as pd
-import requests
+
 
 file_path = '../data/illegal_dumping.csv'
 if not os.path.exists(file_path):
