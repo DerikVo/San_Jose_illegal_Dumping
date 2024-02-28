@@ -2,7 +2,7 @@
 
 # Instructions
 
-To get started we will need to build our container. To do so, access the [scr]('./src') folder as your working directory in bash and run ```docker build -t {image_name} . ``` then to run our docker container we will need to run ```winpty docker run -it {image_name} ``` note that the ```-it``` portion indicates we want to run it in interactive mode and ```winpty``` will only be needed if you're using git bash on a windows machine. You can check if a container has been built by running ```docker ps -a``` in your command line. The ```-a``` includes all containers, both active and inactive ones. 
+To get started we will need to build our container. To do so, access the [src](./src) folder as your working directory in bash and run ```docker build -t {image_name} . ``` then to run our docker container we will need to run ```winpty docker run -it {image_name} ``` note that the ```-it``` portion indicates we want to run it in interactive mode and ```winpty``` will only be needed if you're using git bash on a windows machine. You can check if a container has been built by running ```docker ps -a``` in your command line. The ```-a``` includes all containers, both active and inactive ones. 
 
 For example, if i run ``` docker build -t test .``` and ```winpty docker run -it test ``` will create a container and run what ever is set up in the docker file. Then to see if it was successful we can run ```docker ps -a```.
 
