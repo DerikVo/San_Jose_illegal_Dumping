@@ -17,7 +17,7 @@ Code was later updated to have a seperate script for pulling the data an cleanin
 
 
 
-file_path = '../data/illegal_dumping.csv'
+file_path = '../../data/illegal_dumping_region.csv'
 if not os.path.exists(file_path):
     url = 'https://geo.sanjoseca.gov/server/rest/services/OPN/OPN_OpenDataService/MapServer/458/query?where=1%3D1&outFields=*&outSR=4326&f=json'
     req = requests.get(url)
@@ -39,12 +39,12 @@ if not os.path.exists(file_path):
     #saves csv
     if not os.path.exists('../data'):
         os.makedirs('../data')
-    df.to_csv('../data/illegal_dumping.csv', index= False)
+    df.to_csv(file_path, index= False)
     #print a status code for creating a csv if it didnt exist before
     print('illegal dumping csv created')
 #if the file exist then it loads it as a csv.
 else:
-    df= pd.read_csv('../data/illegal_dumping.csv')
+    df= pd.read_csv(file_path)
     # Need to learn how to use the params with this datebase; using time and the column name is not working
     # url = 'https://geo.sanjoseca.gov/server/rest/services/OPN/OPN_OpenDataService/MapServer/458/query?where=1%3D1&outFields=*&outSR=4326&f=json'
     # newest_date = df['DATETIMERECEIVEDUTC'].max()
